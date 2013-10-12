@@ -1,0 +1,31 @@
+.toggle-panel {
+  margin: 1.5rem 0;
+}
+.js .toggle-panel[aria-expanded="false"] > :first-child + * {
+  visibility: hidden;
+}
+.js .toggle-panel[aria-expanded="true"] > :first-child + * {
+  visibility: visible;
+}
+.js .toggle-panel > :first-child {
+  cursor: pointer;
+}
+.toggle-panel-content {
+  overflow: hidden;
+}
+.toggle-panel-content > * {
+  overflow: auto;
+}
+.toggle-panel-content > * video {
+  -webkit-transform-style: preserve-3d;
+}
+.toggle-panel-content.transition {
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-property: height, padding-bottom, padding-top, visibility;
+  -moz-transition-property: height, padding-bottom, padding-top, visibility;
+  -o-transition-property: height, padding-bottom, padding-top, visibility;
+  transition-property: height, padding-bottom, padding-top, visibility;
+}

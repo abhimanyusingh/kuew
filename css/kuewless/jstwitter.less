@@ -1,0 +1,48 @@
+@var1: #999;
+
+.jstwitter{
+    position: relative;
+	.item{
+		overflow: hidden;
+		a{
+			text-decoration: none;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+		img{
+			width: 100%;
+			-webkit-border-radius: 5px 5px 0 0;
+			-moz-border-radius: 5px 5px 0 0;
+			border-radius: 5px 5px 0 0;
+		}
+		.thumb{
+			padding: 0;
+			border: none;
+		}
+		.text{
+			display: block;
+		}
+		.time{
+			font-style: italic;
+			color: @var1;
+		}
+		.user{
+			font-style: italic;
+			color: @var1;
+		}
+		&.active{
+			display: block;
+		}
+	}
+	.tweet-wrapper{
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		line-height: 16px;
+		padding: 15px;
+	}
+	.widget-body{
+		padding: 0;
+	}
+}

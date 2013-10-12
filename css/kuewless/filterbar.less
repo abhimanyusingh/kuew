@@ -1,0 +1,133 @@
+@var1: #d8d9da;
+@var2: #fff;
+@var3: #a7a7a7;
+@var4: #42403e;
+
+.filter-bar{
+    background: #e5e5e5;
+	margin: 0 auto 15px;
+	border: 1px solid #dbdbdb;
+	box-shadow: 0 3px 0 0 #f6f6f6;
+	-moz-box-shadow: 0 3px 0 0 #f6f6f6;
+	-webkit-box-shadow: 0 3px 0 0 #f6f6f6;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+	line-height: 30px;
+	height: 40px;
+	padding: 0 10px;
+	&.border-top-none{
+		border-top: none;
+	}
+	div{
+		padding: 5px 0;
+		display: block;
+		line-height: 30px;
+		div{
+			padding: 0;
+			margin: 0;
+			&:not(.helper){
+				margin: 0 15px 0 0;
+			}
+			input{
+				margin: 3px 0 0;
+			}
+			&.input-append{
+				margin: 0;
+				.add-on{
+					padding: 1px 3px;
+					margin: 3px 0 0 -1px;
+					background: @var2;
+					color: @var1;
+					border-color: @var1;
+					i:before{
+						top: 4px;
+						left: 4px;
+						font-size: 14px;
+						color: #d0d1d1;
+					}
+				}
+				button.add-on{
+					width: 24px;
+					height: 24px;
+				}
+			}
+			&:last-child{
+				margin: 0;
+			}
+		}
+		&:not(.helper){
+			float: left;
+		}
+		&.glyphicons{
+			padding: 0 0 0 35px;
+			i:before{
+				top: 12px;
+				left: 9px;
+				font-size: 17px;
+				color: rgba(255, 255, 255, 0.8);
+			}
+		}
+		&.clearfix{
+			padding: 0;
+			clear: both;
+			float: none;
+			display: block;
+			height: 0;
+			margin: 0;
+		}
+		&.lbl{
+			padding: 0 10px 0 35px;
+			background: #4a8bc2;
+			height: 40px;
+			line-height: 40px;
+			margin-right: 10px;
+			color: @var2;
+		}
+	}
+	form{
+		margin: 0;
+		input{
+			margin: 0 5px 3px 0;
+			padding: 1px 5px;
+			color: @var3;
+		}
+		select{
+			margin: 0 5px 3px 0;
+			padding: 1px;
+			color: @var3;
+			height: 23px;
+		}
+		label{
+			float: left;
+			margin: 0 5px;
+			display: block;
+			line-height: 30px;
+		}
+	}
+	&.border-none{
+		border: none;
+	}
+	&.dark{
+		background: #64625f;
+		color: @var2;
+		div div.input-append .add-on{
+			background: @var4;
+			color: @var2;
+			border-color: @var4;
+		}
+		div div.input-append .add-on i:before{
+			color: #767473;
+			text-shadow: none;
+		}
+		form input:focus{
+			border-color: @var4;
+		}
+		form input{
+			border-color: @var4;
+		}
+		form select{
+			border-color: @var4;
+		}
+	}
+}

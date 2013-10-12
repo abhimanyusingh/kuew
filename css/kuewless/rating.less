@@ -1,0 +1,38 @@
+@var1: #4a8bc2;
+
+.rating{
+    unicode-bidi: bidi-override;
+	direction: rtl;
+	&.text-large{
+		margin: 7px 0;
+	}
+	span.star{
+		font-family: FontAwesome;
+		font-weight: normal;
+		font-style: normal;
+		display: inline-block;
+		&.active:before{
+			content: "\f005";
+			color: @var1;
+		}
+	}
+	span.star:before{
+		content: "\f006";
+		padding-right: 5px;
+	}
+	span.star:not(.read-only):hover{
+		cursor: pointer;
+	}
+	span.star:not(.read-only):before:hover{
+		content: "\f005";
+		color: @var1;
+	}
+	span.star:not(.read-only):before:hover~span.star{
+		content: "\f005";
+		color: @var1;
+	}
+	span.star.active~span.star:before{
+		content: "\f005";
+		color: @var1;
+	}
+}

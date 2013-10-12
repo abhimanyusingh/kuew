@@ -1,0 +1,110 @@
+.toggle-panel.boxed {
+  background-color: #151515;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  outline: none;
+  padding: 24px;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+}
+.toggle-panel.boxed[aria-expanded="false"] {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.toggle-panel.boxed[aria-expanded="true"] > :first-child {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.toggle-panel.boxed.bottom {
+  bottom: 0;
+}
+.toggle-panel.boxed.bottom > :first-child {
+  top: -48px;
+}
+.toggle-panel.boxed > :first-child {
+  display: none;
+}
+.toggle-panel.boxed > :first-child + * {
+  margin-top: 0;
+}
+.toggle-panel.boxed > :last-child {
+  margin-bottom: 0;
+}
+.js .toggle-panel.boxed {
+  -webkit-box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.75);
+  margin: 0;
+  position: fixed;
+}
+.js .toggle-panel.boxed.apple-green > :first-child {
+  background-color: #8DB600;
+}
+.js .toggle-panel.boxed.avocado > :first-child {
+  background-color: #568203;
+}
+.js .toggle-panel.boxed.azure > :first-child {
+  background-color: #007FFF;
+}
+.js .toggle-panel.boxed.carrot-orange > :first-child {
+  background-color: #ED9121;
+}
+.js .toggle-panel.boxed > :first-child {
+  background-color: #222222;
+  border: none;
+  border-radius: 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: block;
+  font-size: 24px;
+  line-height: 36px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 12px;
+  text-align: center;
+  width: 36px;
+}
+.js .toggle-panel.boxed > :first-child + * > * > :first-child {
+  margin-top: 0;
+}
+.js .toggle-panel.boxed > :first-child + * > * > :last-child {
+  margin-bottom: 0;
+}
+.js .toggle-panel.boxed.tomato > :first-child {
+  background-color: #FF6347;
+}
+.toggle-panel.boxed.top {
+  top: 0;
+}
+.toggle-panel.boxed.top > :first-child {
+  bottom: -48px;
+}
+.toggle-panel.boxed.transition {
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-property: height, padding-bottom, padding-top, visibility;
+  -moz-transition-property: height, padding-bottom, padding-top, visibility;
+  -o-transition-property: height, padding-bottom, padding-top, visibility;
+  transition-property: height, padding-bottom, padding-top, visibility;
+}
+.toggle-panel.boxed.transition > :first-child {
+  -webkit-transition-delay: 0.25s;
+  -moz-transition-delay: 0.25s;
+  -o-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}

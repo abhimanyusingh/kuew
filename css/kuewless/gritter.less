@@ -1,0 +1,85 @@
+#gritter-notice-wrapper{
+    position: fixed;
+	top: 55px;
+	right: 20px;
+	width: 301px;
+	z-index: 9999;
+	&.top-left{
+		left: 20px;
+		right: auto;
+	}
+	&.bottom-right{
+		top: auto;
+		left: auto;
+		bottom: 20px;
+		right: 20px;
+	}
+	&.bottom-left{
+		top: auto;
+		right: auto;
+		bottom: 20px;
+		left: 20px;
+	}
+}
+.gritter-item-wrapper{
+	position: relative;
+	margin: 0 0 10px 0;
+}
+.gritter-top{
+	display: none;
+}
+.gritter-bottom{
+	display: none;
+}
+.gritter-item{
+	display: block;
+	background: #292A2F;
+	color: #fff;
+	padding: 8px 11px;
+	font-size: 11px;
+	p{
+		padding: 0;
+		margin: 0;
+		word-wrap: break-word;
+	}
+	a{
+		color: #26AEF2!important;
+	}
+}
+.gritter-close{
+	cursor: pointer;
+	display: block !important;
+	height: 30px;
+	position: absolute;
+	right: 3px;
+	text-align: right;
+	top: 0;
+	width: 30px;
+	&:before{
+		content: "\f00d";
+		font-size: 20px;
+		&:hover{
+			color: #eee;
+		}
+	}
+}
+.gritter-title{
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0 0 7px 0;
+	display: block;
+	text-shadow: 1px 1px 0 #000;
+}
+.gritter-image{
+	width: 48px;
+	height: 48px;
+	float: left;
+}
+.gritter-with-image{
+	padding: 0;
+	width: 220px;
+	float: right;
+}
+.gritter-without-image{
+	padding: 0;
+}

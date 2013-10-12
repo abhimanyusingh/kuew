@@ -1,0 +1,24 @@
+/* ajax request is processing */
+.toggle-panel.theme-name[aria-busy="true"] {
+
+}
+
+/* collapsed panel */
+.toggle-panel.theme-name[aria-expanded="false"] {
+
+}
+
+/* expanded panel */
+.toggle-panel.theme-name[aria-expanded="true"] {
+
+}
+
+/* toggle button */
+.toggle-panel.theme-name > :first-child {
+
+}
+
+/* content wrapper */
+.toggle-panel.theme-name + * > * {
+
+}

@@ -1,0 +1,290 @@
+#SlideAddGlobalMilestone .row-fluid {
+    /* display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;  */
+}
+#SlideAddGlobalMilestone .multi-step-input {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    font-size: .75em;
+    width: 80%;
+    color: darkblue;
+}
+#SlideAddGlobalMilestone .multi-step-input ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+#SlideAddGlobalMilestone .multi-step-input .Milestone-item {
+    flex-flow: row;
+    display: flex;
+    padding: 1 em;
+}
+#SlideAddGlobalMilestone .multi-step-input .ng-scope {
+    width: auto;
+    display: flex;
+    flex-flow: row;
+}
+#SlideAddGlobalMilestone .multi-step-input .ng-binding {
+    margin-right: .5em;
+    padding-top: 2em;
+}
+#SlideAddGlobalMilestone .multi-step-input .Milestone-item-clear {
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    color: darkblue;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    -moz-transition: opacity 0.25s ease-in-out;
+    -webkit-transition: opacity 0.25s ease-in-out;
+}
+#SlideAddGlobalMilestone .multi-step-input .ng-binding:hover .Milestone-item-clear{
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out;
+    -moz-transition: opacity 0.25s ease-in-out;
+    -webkit-transition: opacity 0.25s ease-in-out;
+}
+#SlideAddGlobalMilestone .multi-step-input .input-select-outer {
+    margin-top:1.9em;
+}
+#SlideAddGlobalMilestone .multi-step-input input{
+    margin-top: 1.5em;
+    margin-right: .5em;
+    font-size: 1em;
+    background-color:transparent;
+    color:darkblue !important;
+    border:none;
+}
+
+.MilestoneSelectBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row;
+    width: 40em;
+    height: 20em;
+    background-color: darkslateblue;
+    margin-right: 2em;
+    font-size: 13px;
+    border-radius: 1em;
+}
+
+.title{
+    text-transform: uppercase;
+    text-align: center;
+    padding: 25px 10px 17px;
+    font-size:2em;
+    font-weight: 300;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+.MilestoneCircle{
+    height: 30em;
+    width: 30em;
+    font-size: .5em;
+    overflow: hidden;
+    margin: 2em;
+    cursor: pointer
+;
+}
+
+#MilestoneTypeSelect{
+
+    margin-left: auto;
+    margin-right: auto;
+}
+#MilestoneTypeSelect.corner{
+    -webkit-transform-origin: 50% 0%;
+    -moz-transform-origin: 50% 0%;
+    -o-transform-origin: 50% 0%;
+    -ms-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform-style: flat;
+    -moz-transform-style: flat;
+    -o-transform-style: flat;
+    -ms-transform-style: flat;
+    transform-style: flat;
+    -webkit-transform: translate(-150%, -20%);
+    -moz-transform: translate(-150%, -20%);
+    -o-transform: translate(-150%, -20%);
+    -ms-transform: translate(-150%, -20%);
+    transform: translate(-150%, -20%);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.milestonePanel{
+    position: absolute;
+    top: 1em;
+    padding-top: 2em;
+
+    height: 40em;
+    /*background-color: darkslateblue;
+    margin-right: 2em;
+    font-size: 13px;                  */
+    border-radius: 1em;
+    width: 95%;
+}
+.milestonePanel .titlemilestone{
+    float: left;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-right: auto;
+    padding-left: 1em;
+
+}
+
+.milestonePanelListItem{
+    font-size: .75em;
+    margin-bottom: .25em;
+    color: #ffffff;
+    background: gold;
+    cursor: pointer;
+}
+
+.milestoneMilestones{
+    margin-left: .25em;
+
+    -o-transition:color .2s ease-out, background 1s ease-in;
+    -ms-transition:color .2s ease-out, background 1s ease-in;
+    -moz-transition:color .2s ease-out, background 1s ease-in;
+    -webkit-transition:color .2s ease-out, background 1s ease-in;
+    /* ...and now override with proper CSS property */
+    transition:color .2s ease-out, background 1s ease-in;
+    cursor: pointer;
+
+}
+
+.milestoneMilestones:hover{
+    color:gold;
+    -o-transition:color .2s ease-out, background 1s ease-in;
+    -ms-transition:color .2s ease-out, background 1s ease-in;
+    -moz-transition:color .2s ease-out, background 1s ease-in;
+    -webkit-transition:color .2s ease-out, background 1s ease-in;
+    /* ...and now override with proper CSS property */
+    transition:color .2s ease-out, background 1s ease-in;
+}
+
+#currentMilestones {
+
+    padding: 1em;
+}
+#currentMilestones ul.currentMilestonesList {
+    width: 100%;
+    margin-bottom: .5em;
+    font-weight: 400;
+}
+#currentMilestones ul.currentMilestonesList li {
+    color: darkblue;
+    width: 100%;
+    display: inline-block;
+}
+#currentMilestones ul.currentMilestonesList li.currentMilestoneParent {
+    font-weight: 400;
+}
+#currentMilestones ul.currentMilestonesList li.currentMilestoneChild {
+    font-weight: 300;
+    width: 94%;
+    margin-left: .5em;
+}
+#currentMilestones ul.currentMilestonesList li.currentMilestoneChild:before {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot');
+    src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'), url('../fonts/icomoon.woff') format('woff'), url('../fonts/icomoon.ttf') format('truetype'), url('../fonts/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    content: "\e0f8";
+    float: left;
+    margin: .5em;
+    margin-left: -1.75em;
+}
+#currentMilestones ul.currentMilestonesList li .MilestoneCurrentItem {
+    background-color: white;
+    padding: .5em;
+    width: 88%;
+}
+.MilestoneInfo{
+    width: 75%;
+    background-color: whitesmoke;
+    font-size: .75em;
+    padding: 1em;
+    height: 0px;
+
+    opacity: 0;
+
+    transition: height 2s ease-in-out;
+
+}
+.opened{
+    height: auto;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: height 0.5s;
+    padding: 1em;
+    transition: height .5s ease-in-out;
+    transition: opacity 1s ease-in-out, height 2s ease-in-out;
+}
+
+#MilestoneAddContainer{
+    margin-top: -12em;
+}
+
+.titleCreateMilestone{
+    float: left;
+    text-transform: uppercase;
+    text-align: left   ;
+    font-weight: 300;
+
+}
+input[type="text"] {
+    font-size:2em;
+    border: none;
+    animation: blink-empty 1s infinite;
+    border-left: transparent solid 1px;
+    margin:5px ;
+}
+
+input[type="text"]:focus {
+    font-size:2em;
+    border: none;
+
+    border-left: transparent solid 1px;
+    margin:5px
+}
+@keyframes blink-empty {
+    50% {border-left: 1px solid #333;}
+}
+
+
+#create-milestone-type .wizbutton{
+    font-size:3em;
+}
+
+
+
+.hidden{
+    display:none ;
+}
+
+.well{
+    z-index: 1;
+    position: relative;
+    padding: 3px;
+    margin: 0 0 5px;
+
+    border-radius: 5px 5px 5px 5px;
+    background: #fafafa;
+    border-color: #dbdbdb;
+}
+
+
+

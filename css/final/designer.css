@@ -1,0 +1,85 @@
+#page_options_toggle {
+    background: #3b3b3b;
+    border-top:1px solid #222222;
+    cursor: pointer;
+    font-size: 9px;
+    line-height:12px;
+    font-weight: bold;
+    height: 14px;
+    margin: 0 auto;/*-11px auto 0*/
+    padding: 0;
+    text-align:center;
+    -moz-box-shadow: 0 0 5px #555;
+    -webkit-box-shadow: 0 0 5px #555;
+    box-shadow: 0 0 5px #555;
+}
+#page_options_toggle .open {
+    background: url("/static/img/site/page_options_arw.png") no-repeat -4px bottom transparent;
+    height:4px;
+    width:7px;
+    margin:5px auto 0;
+}
+#page_options_toggle .close {
+    background: url("/static/img/site/page_options_arw.png") no-repeat -4px top transparent;
+    height:4px;
+    width:7px;
+    margin:5px auto 0;
+}
+
+/** MENU **/
+.menu_wrapper {
+    padding: 11px;
+}
+
+#page_options_toolbar .menu_wrapper {
+    padding-bottom: 0;
+}
+
+.menu_option
+{
+    width:108px;
+    height:110px;
+    cursor:pointer;
+    display:inline-block;
+    position:relative;
+    margin-right:11px;
+    margin-bottom: 6px;
+}
+.menu_folders_area{
+    display: inline-block;
+    position: relative;
+
+}
+.menu_option_small
+{
+    width:43px;
+    height:42px;
+    cursor:pointer;
+    display:inline-block;
+    position:relative;
+    margin-right:11px;
+    margin-bottom: 6px;
+}
+
+#menu_background{background:url(/static/img/ip2/btns_builder/background.png); }
+#menu_background:hover{ background-position:bottom;}
+#menu_buttons{background:url(/static/img/ip2/btns_builder/buttons.png); }
+#menu_buttons:hover{ background-position:bottom;}
+#menu_element{background:url(/static/img/ip2/btns_builder/elements.png); }
+#menu_element:hover{ background-position:bottom;}
+#menu_fonts{background:url(/static/img/ip2/btns_builder/fonts.png); }
+#menu_fonts:hover{ background-position:bottom;}
+#menu_colors{background:url(/static/img/ip2/btns_builder/colors.png); }
+#menu_colors:hover{ background-position:bottom;}
+#menu_seo{background:url(/static/img/ip2/btns_builder/seo.png); }
+#menu_seo:hover{ background-position:bottom;}
+#menu_conversions{background:url(/static/img/ip2/btns_builder/conversions.png); }
+#menu_conversions:hover{ background-position:bottom;}
+#menu_analytics{background:url(/static/img/ip2/btns_builder/analytics.png); }
+#menu_analytics:hover{ background-position:bottom;}
+#menu_html-css{background:url(/static/img/ip2/btns_builder/html-css.png); }
+#menu_html-css:hover{ background-position:bottom;}
+#menu_page-history{background:url(/static/img/ip2/btns_builder/page-history.png); }
+#menu_page-history:hover{ background-position:bottom;}
+
+.menu_other	{background:url(/static/img/ip2/btns_builder/html-css.png); }

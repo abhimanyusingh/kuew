@@ -1,0 +1,142 @@
+.toggle-panel.minimal {
+  border: 1px solid #DDDDDD;
+  margin: 24px 0;
+  outline: none;
+  padding: 24px;
+  position: relative;
+}
+.toggle-panel.minimal[aria-busy="true"]:after {
+  background-image: url('../../../img/ajax-loading.gif');
+  background-repeat: no-repeat;
+  content: "";
+  height: 16px;
+  margin: 18px 24px 0 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 16px;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  .toggle-panel.minimal[aria-busy="true"]:after {
+    background-image: url('../../../img/ajax-loading@2x.gif');
+    background-size: 16px 16px;
+  }
+}
+.toggle-panel.minimal.border-radius {
+  border-radius: 7px;
+}
+.toggle-panel.minimal > :first-child {
+  border-bottom: 1px solid #DDDDDD;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: -24px -24px 24px -24px;
+  padding: 12px 24px;
+}
+.toggle-panel.minimal > :first-child + * {
+  margin-top: 0;
+}
+.toggle-panel.minimal > :last-child {
+  margin-bottom: 0;
+}
+.js .toggle-panel.minimal {
+  border: none;
+  padding: 0;
+}
+.js .toggle-panel.minimal.border-radius[aria-expanded="true"] > :first-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.js .toggle-panel.minimal.border-radius > :first-child {
+  border-radius: 7px;
+}
+.js .toggle-panel.minimal.border-radius > :first-child + * > * {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.js .toggle-panel.minimal.border-radius.transition > :first-child {
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+.js .toggle-panel.minimal.title-arrow-icon[aria-expanded="true"] > :first-child:before {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.js .toggle-panel.minimal.title-arrow-icon > :first-child:before {
+  content: "▶";
+  font-size: 16px;
+  margin: 6px 0 0 -28px;
+}
+.js .toggle-panel.minimal.title-arrow-icon.transition > :first-child:before {
+  -webkit-transition-delay: 0.25s;
+  -moz-transition-delay: 0.25s;
+  -o-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+.js .toggle-panel.minimal.title-arrow-icon > :first-child,
+.js .toggle-panel.minimal.title-plus-icon > :first-child {
+  padding-left: 48px;
+}
+.js .toggle-panel.minimal.title-arrow-icon > :first-child + * > *,
+.js .toggle-panel.minimal.title-plus-icon > :first-child + * > * {
+  padding-left: 48px;
+}
+.js .toggle-panel.minimal.title-arrow-icon > :first-child:before,
+.js .toggle-panel.minimal.title-plus-icon > :first-child:before {
+  float: left;
+  line-height: 1;
+}
+.js .toggle-panel.minimal.title-arrow-icon.apple-green > :first-child:before,
+.js .toggle-panel.minimal.title-plus-icon.apple-green > :first-child:before {
+  color: #8DB600;
+}
+.js .toggle-panel.minimal.title-arrow-icon.avocado > :first-child:before,
+.js .toggle-panel.minimal.title-plus-icon.avocado > :first-child:before {
+  color: #568203;
+}
+.js .toggle-panel.minimal.title-arrow-icon.azure > :first-child:before,
+.js .toggle-panel.minimal.title-plus-icon.azure > :first-child:before {
+  color: #007FFF;
+}
+.js .toggle-panel.minimal.title-arrow-icon.carrot-orange > :first-child:before,
+.js .toggle-panel.minimal.title-plus-icon.carrot-orange > :first-child:before {
+  color: #ED9121;
+}
+.js .toggle-panel.minimal.title-arrow-icon.tomato > :first-child:before,
+.js .toggle-panel.minimal.title-plus-icon.tomato > :first-child:before {
+  color: #FF6347;
+}
+.js .toggle-panel.minimal.title-plus-icon[aria-expanded="true"] > :first-child:before {
+  content: "–";
+}
+.js .toggle-panel.minimal.title-plus-icon > :first-child:before {
+  color: #AAAAAA;
+  content: "+";
+  font-size: 24px;
+  margin: 0 0 0 -28px;
+}
+.js .toggle-panel.minimal > :first-child {
+  border: 1px solid #DDDDDD;
+  margin: 0;
+  padding: 12px 24px;
+}
+.js .toggle-panel.minimal > :first-child + * > * {
+  border: 1px solid #DDDDDD;
+  border-top: none;
+  display: block;
+  padding: 24px;
+}
+.js .toggle-panel.minimal > :first-child + * > * > :first-child {
+  margin-top: 0;
+}
+.js .toggle-panel.minimal > :first-child + * > * > :last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,316 @@
+/*
+ * CSS TOGGLE SWITCHES
+ * Unlicense
+ *
+ * Ionuț Colceriu - ghinda.net
+ * https://github.com/ghinda/css-toggle-switch
+ *
+ */
+/* Toggle Switches
+ */
+/* Shared
+ */
+/* Checkbox
+ */
+/* Radio Switch
+ */
+/* Hide by default
+ */
+.switch-toggle a, .switch-light span span {
+  display: none !important; }
+
+/* We can't test for a specific feature,
+ * so we only target browsers with support for media queries.
+ */
+@media only screen {
+  /* Checkbox switch
+	 */
+  /* Radio switch
+	 */
+  /* Standalone Themes */
+  /* Candy Theme
+	 * Based on the "Sort Switches / Toggles (PSD)" by Ormal Clarck
+	 * http://www.premiumpixels.com/freebies/sort-switches-toggles-psd/
+	 */
+  /* Android Theme
+	 */
+  /* iOS Theme
+	 */
+  .switch-light {
+    display: block !important;
+    height: 30px !important;
+    /* Outline the toggles when the inputs are focused
+	 */
+    position: relative !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin-left: 100px !important;
+    /* Position the label over all the elements, except the slide-button (<a>)
+	 * Clicking anywhere on the label will change the switch-state
+	 */
+    /* Don't hide the input from screen-readers and keyboard access
+	 */ }
+    .switch-light * {
+      -webkit-box-sizing: border-box !important;
+      -moz-box-sizing: border-box !important;
+      box-sizing: border-box !important; }
+    .switch-light a {
+      display: block !important;
+      -webkit-transition: all 0.3s ease-out !important;
+      -moz-transition: all 0.3s ease-out !important;
+      transition: all 0.3s ease-out !important; }
+    .switch-light label, .switch-light > span {
+      line-height: 30px !important;
+      vertical-align: middle !important; }
+    .switch-light input:focus ~ a, .switch-light input:focus + label {
+      outline: 1px dotted #888888 !important; }
+    .switch-light label {
+      position: relative !important;
+      z-index: 3 !important;
+      display: block !important;
+      width: 100% !important; }
+    .switch-light input {
+      position: absolute !important;
+      opacity: 0 !important;
+      z-index: 5 !important; }
+      .switch-light input:checked ~ a {
+        right: 0% !important; }
+    .switch-light > span {
+      position: absolute !important;
+      left: -100px !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding-right: 100px !important;
+      text-align: left !important; }
+      .switch-light > span span {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        z-index: 5 !important;
+        display: block !important;
+        width: 50% !important;
+        margin-left: 100px !important;
+        text-align: center !important; }
+        .switch-light > span span:last-child {
+          left: 50% !important; }
+    .switch-light a {
+      position: absolute !important;
+      right: 50% !important;
+      top: 0 !important;
+      z-index: 4 !important;
+      display: block !important;
+      width: 50% !important;
+      height: 100% !important;
+      padding: 0 !important; }
+  .switch-toggle {
+    display: block !important;
+    height: 30px !important;
+    /* Outline the toggles when the inputs are focused
+	 */
+    position: relative !important;
+    /* For callout panels in foundation
+	 */
+    padding: 0 !important !important;
+    /* Generate styles for the multiple states */ }
+    .switch-toggle * {
+      -webkit-box-sizing: border-box !important;
+      -moz-box-sizing: border-box !important;
+      box-sizing: border-box !important; }
+    .switch-toggle a {
+      display: block !important;
+      -webkit-transition: all 0.3s ease-out !important;
+      -moz-transition: all 0.3s ease-out !important;
+      transition: all 0.3s ease-out !important; }
+    .switch-toggle label, .switch-toggle > span {
+      line-height: 30px !important;
+      vertical-align: middle !important; }
+    .switch-toggle input:focus ~ a, .switch-toggle input:focus + label {
+      outline: 1px dotted #888888 !important; }
+    .switch-toggle input {
+      position: absolute !important;
+      opacity: 0 !important; }
+    .switch-toggle label {
+      position: relative !important;
+      z-index: 2 !important;
+      float: left !important;
+      width: 50% !important;
+      height: 100% !important;
+      margin: 0 !important;
+      text-align: center !important; }
+    .switch-toggle a {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      padding: 0 !important;
+      z-index: 1 !important;
+      width: 50% !important;
+      height: 100% !important; }
+    .switch-toggle input:last-of-type:checked ~ a {
+      left: 50% !important; }
+    .switch-toggle.switch-3 label, .switch-toggle.switch-3 a {
+      width: 33.33333% !important; }
+    .switch-toggle.switch-3 input:checked:nth-of-type(2) ~ a {
+      left: 33.33333% !important; }
+    .switch-toggle.switch-3 input:checked:last-of-type ~ a {
+      left: 66.66667% !important; }
+    .switch-toggle.switch-4 label, .switch-toggle.switch-4 a {
+      width: 25% !important; }
+    .switch-toggle.switch-4 input:checked:nth-of-type(2) ~ a {
+      left: 25% !important; }
+    .switch-toggle.switch-4 input:checked:nth-of-type(3) ~ a {
+      left: 50% !important; }
+    .switch-toggle.switch-4 input:checked:last-of-type ~ a {
+      left: 75% !important; }
+    .switch-toggle.switch-5 label, .switch-toggle.switch-5 a {
+      width: 20% !important; }
+    .switch-toggle.switch-5 input:checked:nth-of-type(2) ~ a {
+      left: 20% !important; }
+    .switch-toggle.switch-5 input:checked:nth-of-type(3) ~ a {
+      left: 40% !important; }
+    .switch-toggle.switch-5 input:checked:nth-of-type(4) ~ a {
+      left: 60% !important; }
+    .switch-toggle.switch-5 input:checked:last-of-type ~ a {
+      left: 80% !important; }
+  .candy {
+    background-color: #2d3035 !important;
+    border-radius: 3px !important;
+    color: white !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    text-shadow: 1px 1px 1px #191b1e !important;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(255, 255, 255, 0.2) !important; }
+    .candy label {
+      color: white !important;
+      -webkit-transition: color 0.2s ease-out !important;
+      -moz-transition: color 0.2s ease-out !important;
+      transition: color 0.2s ease-out !important; }
+    .candy input:checked + label {
+      color: #333333 !important;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) !important; }
+    .candy a {
+      border: 1px solid #333333 !important;
+      background-color: #70c66b !important;
+      border-radius: 3px !important;
+      background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0)) !important;
+      background-image: linear-gradient(to  bottom, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0)) !important;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.45) !important; }
+    .candy > span {
+      color: #333333 !important;
+      text-shadow: none !important; }
+    .candy span {
+      color: white !important; }
+    .candy.blue a {
+      background-color: #38a3d4 !important; }
+    .candy.yellow a {
+      background-color: #f5e560 !important; }
+  .android {
+    background-color: #464747 !important;
+    border-radius: 1px !important;
+    color: white !important;
+    box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0 !important;
+    /* Selected ON switch-light
+		 */ }
+    .android label {
+      color: white !important; }
+    .android > span span {
+      opacity: 0 !important;
+      -webkit-transition: all 0.1s !important;
+      -moz-transition: all 0.1s !important;
+      transition: all 0.1s !important; }
+      .android > span span:first-of-type {
+        opacity: 1 !important; }
+    .android a {
+      background-color: #666666 !important;
+      border-radius: 1px !important;
+      box-shadow: inset rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.3) 0 -1px 0 !important; }
+    .android.switch-light input:checked ~ a {
+      background-color: #0e88b1 !important; }
+    .android.switch-light input:checked ~ span span:first-of-type {
+      opacity: 0 !important; }
+    .android.switch-light input:checked ~ span span:last-of-type {
+      opacity: 1 !important; }
+    .android.switch-toggle, .android > span span {
+      font-size: 85% !important;
+      text-transform: uppercase !important; }
+  .ios.switch-light {
+    color: #868686 !important; }
+    .ios.switch-light a {
+      left: 0 !important;
+      width: 30px !important;
+      background-color: white !important;
+      border: 1px solid lightgrey !important;
+      border-radius: 100% !important;
+      -webkit-transition: all 0.3s ease-out !important;
+      -moz-transition: all 0.3s ease-out !important;
+      transition: all 0.3s ease-out !important;
+      box-shadow: inset 0 -3px 3px rgba(0, 0, 0, 0.025), 0 1px 4px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.1) !important; }
+    .ios.switch-light > span span {
+      width: 100% !important;
+      left: 0 !important;
+      opacity: 0 !important; }
+      .ios.switch-light > span span:first-of-type {
+        opacity: 1 !important;
+        padding-left: 30px !important; }
+      .ios.switch-light > span span:last-of-type {
+        padding-right: 30px !important; }
+    .ios.switch-light > span:before {
+      content: '' !important;
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
+      position: absolute !important;
+      left: 100px !important;
+      top: 0 !important;
+      background-color: #fafafa !important;
+      border: 1px solid lightgrey !important;
+      border-radius: 30px !important;
+      -webkit-transition: all 0.5s ease-out !important;
+      -moz-transition: all 0.5s ease-out !important;
+      transition: all 0.5s ease-out !important;
+      box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0 !important; }
+    .ios.switch-light input:checked ~ a {
+      left: 100% !important;
+      margin-left: -30px !important; }
+    .ios.switch-light input:checked ~ span:before {
+      border-color: #53d76a !important;
+      box-shadow: inset 0 0 0 30px #53d76a !important; }
+    .ios.switch-light input:checked ~ span span:first-of-type {
+      opacity: 0 !important; }
+    .ios.switch-light input:checked ~ span span:last-of-type {
+      opacity: 1 !important;
+      color: white !important; }
+  .ios.switch-toggle {
+    background-color: #fafafa !important;
+    border: 1px solid lightgrey !important;
+    border-radius: 30px !important;
+    box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0 !important; }
+    .ios.switch-toggle a {
+      background-color: #53d76a !important;
+      border-radius: 25px !important;
+      -webkit-transition: all 0.3s ease-out !important;
+      -moz-transition: all 0.3s ease-out !important;
+      transition: all 0.3s ease-out !important; }
+    .ios.switch-toggle label {
+      color: #868686 !important; }
+  .ios input:checked + label {
+    color: #3a3a3a !important; } }
+
+/* Bugfix for older Webkit, including mobile Webkit. Adapted from
+ * http://css-tricks.com/webkit-sibling-bug/
+ *
+ * Improved by @seantimm, to fix memory use issues
+ * https://github.com/zurb/foundation/pull/2725
+ */
+@media only screen and (-webkit-min-device-pixel-ratio: 0) and (max-device-width: 480px) {
+  .switch-light, .switch-toggle {
+    -webkit-animation: webkitSiblingBugfix infinite 1s !important; } }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  .switch-light, .switch-toggle {
+    -webkit-animation: none 0 !important; } }
+
+@-webkit-keyframes webkitSiblingBugfix {
+  from {
+    position: relative !important; }
+
+  to {
+    position: relative !important; } }

@@ -1,0 +1,212 @@
+.bg-none{ background-color: transparent !important; }
+.bg-transparent{ background-color: rgba(255, 255, 255, 0.25) !important; color: #FFFFFF !important; }
+.bg-white{ background-color: #FFFFFF !important; color: #000000 !important; }
+
+.bg-black{ background-color: #323232 !important; color: #FFFFFF !important; } /* RGB(50, 50, 50) */
+.bg-silver{ background-color: #f3f3f3 !important; color: #000000 !important; } /* RGB(243, 243, 243) */
+.bg-lime{ background-color: #A4C400 !important; color: #FFFFFF !important; } /* RGB(164, 196, 0) */
+.bg-green{ background-color: #60A917 !important; color: #FFFFFF !important; } /* RGB(96, 169, 23) */
+.bg-emerald{ background-color: #008A00 !important; color: #FFFFFF !important; } /* RGB(0, 138, 0) */
+.bg-teal{ background-color: #00ABA9 !important; color: #FFFFFF !important; } /* RGB(0, 171, 169) */
+.bg-cyan{ background-color: #1BA1E2 !important; color: #FFFFFF !important; } /* RGB(27, 161, 226) */
+.bg-cobalt{ background-color: #0050EF !important; color: #FFFFFF !important; } /* RGB(0, 80, 239) */
+.bg-indigo{ background-color: #6A00FF !important; color: #FFFFFF !important; } /* RGB(106, 0, 255) */
+.bg-violet{ background-color: #AA00FF !important; color: #FFFFFF !important; } /* RGB(170, 0, 255) */
+.bg-pink{ background-color: #F472D0 !important; color: #FFFFFF !important; } /* RGB(244, 114, 208) */
+.bg-magenta{ background-color: #D80073 !important; color: #FFFFFF !important; } /* RGB(216, 0, 115) */
+.bg-crimson{ background-color: #A20025 !important; color: #FFFFFF !important; } /* RGB(162, 0, 37) */
+.bg-red{ background-color: #E51400 !important; color: #FFFFFF !important; } /* RGB(229, 20, 0) */
+.bg-orange{ background-color: #FA6800 !important; color: #FFFFFF !important; } /* RGB(250, 104, 0) */
+.bg-amber{ background-color: #F0A30A !important; color: #FFFFFF !important; } /* RGB(240, 163, 10) */
+.bg-yellow{ background-color: #E3C800 !important; color: #FFFFFF !important; } /* RGB(227, 200, 0) */
+.bg-brown{ background-color: #825A2C !important; color: #FFFFFF !important; } /* RGB(130, 90, 44) */
+.bg-olive{ background-color: #6D8764 !important; color: #FFFFFF !important; } /* RGB(109, 135, 100) */
+.bg-steel{ background-color: #647687 !important; color: #FFFFFF !important; } /* RGB(100, 118, 135) */
+.bg-mauve{ background-color: #76608A !important; color: #FFFFFF !important; } /* RGB(118, 96, 138) */
+.bg-taupe{ background-color: #87794E !important; color: #FFFFFF !important; } /* RGB(135, 121, 78) */
+.bg-coffee {background-color: #e5ccb2 !important; color: #664000 !important }
+.bg-strawberry {background-color: #e9d0dd !important; color: #664000 !important }
+.bg-vanillaice {background-color: #edc944 !important; color: #a87995 !important }
+.bg-lemon {background-color: #ff3933 !important; color: #664000 !important }
+.bg-chocolate {background-color: #664000 !important; color: #fffffa !important }
+.bg-oj {background-color: #e69236 !important; color: #664000 !important }
+.bg-mint {background-color: #fffffa !important; color: #664000 !important }
+.bg-rasberry {background-color: #ff2d25 !important; color: #fffffa !important }
+.bg-vanilla {background-color: #ffffdf !important; color: #664000 !important }
+.bg-blackcurrant {background-color: #a87695 !important; color: #fffffa !important }
+.bg-gum {background-color: #91d0d6 !important; color: #664000 !important }
+.bg-cone {background-color: #d4931e !important; color: #fffffa !important }
+.bg-mintgreen {background-color: #a9ff9f !important; color: #a87695 !important }
+/* end background helper */
+
+
+/* border helper */
+[class*='bordered'].border-2x{ border-width: 2px !important; }
+[class*='bordered'].border-3x{ border-width: 3px !important; }
+
+.bordered{ border: 1px solid #dddddd; }
+.bordered-top{ border-top: 1px solid #dddddd; }
+.bordered-right{ border-right: 1px solid #dddddd; }
+.bordered-bottom{ border-bottom: 1px solid #dddddd; }
+.bordered-left{ border-left: 1px solid #dddddd; }
+
+.border-white{ border-color: #FFFFFF !important; }
+.no-border{ border: 0 none !important; }
+
+.border-black{ border-color: #323232 !important; }
+.border-silver{ border-color: #f3f3f3 !important; }
+.border-lime{ border-color: #A4C400 !important; }
+.border-green{ border-color: #60A917 !important; }
+.border-emerald{ border-color: #008A00 !important; }
+.border-teal{ border-color: #00ABA9 !important; }
+.border-cyan{ border-color: #1BA1E2 !important; }
+.border-cobalt{ border-color: #0050EF !important; }
+.border-indigo{ border-color: #6A00FF !important; }
+.border-violet{ border-color: #AA00FF !important; }
+.border-pink{ border-color: #F472D0 !important; }
+.border-magenta{ border-color: #D80073 !important; }
+.border-crimson{ border-color: #A20025 !important; }
+.border-red{ border-color: #E51400 !important; }
+.border-orange{ border-color: #FA6800 !important; }
+.border-amber{ border-color: #F0A30A !important; }
+.border-yellow{ border-color: #E3C800 !important; }
+.border-brown{ border-color: #825A2C !important; }
+.border-olive{ border-color: #6D8764 !important; }
+.border-steel{ border-color: #647687 !important; }
+.border-mauve{ border-color: #76608A !important; }
+.border-taupe{ border-color: #87794E !important; }
+.border-coffee 						{border-color: #e5ccb2 !important;}
+.border-strawberry 				{border-color: #e9d0dd !important;}
+.border-vanillaice 				{border-color: #edc944 !important;}
+.border-lemon 						{border-color: #ff3933 !important;}
+.border-chocolate 				{border-color: #664000 !important;}
+.border-oj 								{border-color: #e69236 !important;}
+.border-mint 							{border-color: #fffffa !important;}
+.border-rasberry 					{border-color: #ff2d25 !important;}
+.border-vanilla 					{border-color: #ffffdf !important;}
+.border-blackcurrant 			{border-color: #a87695 !important;}
+.border-gum 							{border-color: #91d0d6 !important;}
+.border-cone 							{border-color: #d4931e !important;}
+.border-mintgreen 				{border-color: #a9ff9f !important;}
+
+.border-circle{
+    border: 2px solid #FFFFFF;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+/* end border helper */
+
+
+/* outline helper */
+[class*="outline-"]{
+    cursor: pointer;
+}
+[class*="outline-"]:hover{
+    outline: 3px solid;
+}
+.outline-white:hover{ outline-color: #FFFFFF !important; }
+.no-outline:hover{ outline: 0 none !important; }
+
+.outline-black:hover{ outline-color: #323232 !important; }
+.outline-silver:hover{ outline-color: #f3f3f3 !important; }
+.outline-lime:hover{ outline-color: #A4C400 !important; }
+.outline-green:hover{ outline-color: #60A917 !important; }
+.outline-emerald:hover{ outline-color: #008A00 !important; }
+.outline-teal:hover{ outline-color: #00ABA9 !important; }
+.outline-cyan:hover{ outline-color: #1BA1E2 !important; }
+.outline-cobalt:hover{ outline-color: #0050EF !important; }
+.outline-indigo:hover{ outline-color: #6A00FF !important; }
+.outline-violet:hover{ outline-color: #AA00FF !important; }
+.outline-pink:hover{ outline-color: #F472D0 !important; }
+.outline-magenta:hover{ outline-color: #D80073 !important; }
+.outline-crimson:hover{ outline-color: #A20025 !important; }
+.outline-red:hover{ outline-color: #E51400 !important; }
+.outline-orange:hover{ outline-color: #FA6800 !important; }
+.outline-amber:hover{ outline-color: #F0A30A !important; }
+.outline-yellow:hover{ outline-color: #E3C800 !important; }
+.outline-brown:hover{ outline-color: #825A2C !important; }
+.outline-olive:hover{ outline-color: #6D8764 !important; }
+.outline-steel:hover{ outline-color: #647687 !important; }
+.outline-mauve:hover{ outline-color: #76608A !important; }
+.outline-taupe:hover{ outline-color: #87794E !important; } 
+.outline-coffee 			:hover{outline-color: #e5ccb2 !important;}
+.outline-strawberry 	:hover{outline-color: #e9d0dd !important;}
+.outline-vanillaice 	:hover{outline-color: #edc944 !important;}
+.outline-lemon 				:hover{outline-color: #ff3933 !important;}
+.outline-chocolate 		:hover{outline-color: #664000 !important;}
+.outline-oj 					:hover{outline-color: #e69236 !important;}
+.outline-mint 				:hover{outline-color: #fffffa !important;}
+.outline-rasberry 		:hover{outline-color: #ff2d25 !important;}
+.outline-vanilla 			:hover{outline-color: #ffffdf !important;}
+.outline-blackcurrant :hover{outline-color: #a87695 !important;}
+.outline-gum 					:hover{outline-color: #91d0d6 !important;}
+.outline-cone 				:hover{outline-color: #d4931e !important;}
+/* end outline helper */
+
+
+/* font color helper */
+.color-black{color: #000000 !important;}
+.color-white{color: #ffffff !important;}
+
+.color-silver{ color: #f3f3f3 !important; }
+.color-lime{ color: #A4C400 !important; }
+.color-green{ color: #60A917 !important; }
+.color-emerald{ color: #008A00 !important; }
+.color-teal{ color: #00ABA9 !important; }
+.color-cyan{ color: #1BA1E2 !important; }
+.color-cobalt{ color: #0050EF !important; }
+.color-indigo{ color: #6A00FF !important; }
+.color-violet{ color: #AA00FF !important; }
+.color-pink{ color: #F472D0 !important; }
+.color-magenta{ color: #D80073 !important; }
+.color-crimson{ color: #A20025 !important; }
+.color-red{ color: #E51400 !important; }
+.color-orange{ color: #FA6800 !important; }
+.color-amber{ color: #F0A30A !important; }
+.color-yellow{ color: #E3C800 !important; }
+.color-brown{ color: #825A2C !important; }
+.color-olive{ color: #6D8764 !important; }
+.color-steel{ color: #647687 !important; }
+.color-mauve{ color: #76608A !important; }
+.color-taupe{ color: #87794E !important; }
+.color-coffee 			{color: #e5ccb2 !important;}
+.color-strawberry 	{color: #e9d0dd !important;}
+.color-vanillaice 	{color: #edc944 !important;}
+.color-lemon 				{color: #ff3933 !important;}
+.color-chocolate 		{color: #664000 !important;}
+.color-oj 					{color: #e69236 !important;}
+.color-mint 				{color: #fffffa !important;}
+.color-rasberry 		{color: #ff2d25 !important;}
+.color-vanilla 			{color: #ffffdf !important;}
+.color-blackcurrant {color: #a87695 !important;}
+.color-gum 					{color: #91d0d6 !important;}
+.color-cone 				{color: #d4931e !important;}
+.color-mintgreen {color: #a9ff9f !important; }
+/* font color helper */
+
+/* text helper */
+.text-small{
+    font-size: 0.8em;
+    vertical-align: middle;
+}
+.text-2x{
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+.text-3x{
+    font-size: 2em;
+    vertical-align: middle;
+}
+.text-4x{
+    font-size: 2.5em;
+    vertical-align: middle;
+}
+.text-light{
+    font-weight: lighter;
+}
+/* end text helper */
+
+ul.social-stream .scrollable {
+								height: 100%;
+                overflow-y: scroll;
+            }

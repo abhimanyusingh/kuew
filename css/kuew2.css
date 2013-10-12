@@ -1,0 +1,65 @@
+/*
+Syntax error: Invalid CSS after "  margin-bottom:": expected pseudoclass or pseudoelement, was " 2.308rem"
+        on line 6 of kuew2.scss
+
+1: 
+2: 
+3: 
+4: 
+5: .dash-unit
+6:   margin-bottom: 2.308rem
+7:   padding-bottom: 0.7692rem
+8:   border: 1px solid #bfb9b1
+9:   background-color: #554e44
+10:   -webkit-border-radius: 4px
+11:   -moz-border-radius: 4px
+
+Backtrace:
+kuew2.scss:6
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/scss/parser.rb:1147:in `expected'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/scss/parser.rb:1083:in `expected'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/scss/parser.rb:1065:in `expr!'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/scss/parser.rb:793:in `pseudo'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/scss/parser.rb:677:in `simple_selector_sequence'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/scss/parser.rb:645:in `_selector'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/scss/parser.rb:618:in `selector'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/scss/parser.rb:602:in `selector_sequence'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/scss/parser.rb:527:in `ruleset'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/scss/parser.rb:552:in `block_child'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/scss/parser.rb:542:in `block_contents'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/scss/parser.rb:82:in `stylesheet'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/scss/parser.rb:27:in `parse'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/engine.rb:342:in `_to_tree'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/engine.rb:315:in `_render'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/engine.rb:262:in `render'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/plugin/compiler.rb:362:in `update_stylesheet'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/plugin/compiler.rb:203:in `update_stylesheets'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/plugin/compiler.rb:201:in `each'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/plugin/compiler.rb:201:in `update_stylesheets'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/plugin/compiler.rb:283:in `watch'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/vendor/listen/lib/listen/multi_listener.rb:117:in `initialize_adapter'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/vendor/listen/lib/listen/adapter.rb:198:in `call'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/vendor/listen/lib/listen/adapter.rb:198:in `report_changes'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/vendor/listen/lib/listen/adapter.rb:210:in `poll_changed_dirs'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/vendor/listen/lib/listen/adapters/linux.rb:48:in `start'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/vendor/listen/lib/listen/adapters/linux.rb:48:in `initialize'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/vendor/listen/lib/listen/adapters/linux.rb:48:in `new'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/vendor/listen/lib/listen/adapters/linux.rb:48:in `start'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/vendor/listen/lib/listen/multi_listener.rb:44:in `start'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/plugin/compiler.rb:291:in `watch'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/plugin.rb:107:in `send'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/plugin.rb:107:in `method_missing'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/exec.rb:455:in `watch_or_update'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/exec.rb:318:in `process_result'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/exec.rb:41:in `parse'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/../lib/sass/../sass/exec.rb:21:in `parse!'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.2.10/bin/sass:9
+/usr/bin/sass:23:in `load'
+/usr/bin/sass:23
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"  margin-bottom:\": expected pseudoclass or pseudoelement, was \" 2.308rem\"\A         on line 6 of kuew2.scss\A \A 1: \A 2: \A 3: \A 4: \A 5: .dash-unit\A 6:   margin-bottom: 2.308rem\A 7:   padding-bottom: 0.7692rem\A 8:   border: 1px solid #bfb9b1\A 9:   background-color: #554e44\A 10:   -webkit-border-radius: 4px\A 11:   -moz-border-radius: 4px"; }
