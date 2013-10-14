@@ -2,7 +2,7 @@ define([
     'jquery',
     'underscore',
     'parse',
-    'text!templates/dashboard/aside/asideTemplate.html'
+    'text!templates/aside/asideTemplate.html'
 ], function($, _, P , asideTemplate){
 
     var AsideView = Parse.View.extend({

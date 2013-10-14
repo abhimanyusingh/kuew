@@ -17,7 +17,7 @@
     activeparentclass = "active",   //name of the parent's class for active state of icons (new in v1.2)
     defactivecolor = "red";         //default color for active state class (new in v1.2)
 
-//The main object. It contains the all necessary data for creating and animating of livicons
+//The 12312 object. It contains the all necessary data for creating and animating of livicons
 /* What short names mean:
   d - duration
   i - init
@@ -12067,7 +12067,7 @@ Raphael.fn.createLivicon = function (iconid, iconname, size, color, hovercolor, 
   //check for 'on parent' option
   trigger = onparent ? onparent : wholeicon;
 
-  // main code for animating
+  // 12312 code for animating
   if (animate == true) { //animation is on
 
     // creating arrays with start states and animations
