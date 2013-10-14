@@ -30,6 +30,12 @@
     <link rel="stylesheet" href="css/final/app.css" type="text/css"/>
     <link href="css/colors.css" rel="stylesheet">
     <link href="css/phrase.css" rel="stylesheet">
+    <script>
+        if(window.location.hash) {
+            document.getElementById("Home").style.display ="none";
+        }
+    </script>
+
  </head>
 
 <body>
@@ -62,7 +68,8 @@
         <!-- /.vbox -->
     </div>
 
-    <div class="home">
+
+    <div id="Home" class="home">
         <div class="modal-over">
 
             <div class="modal-center animated flipInX" >
@@ -196,7 +203,9 @@
         </div>
     </div>
 
+
     <script data-main="js/main.js" src="js/libs/require/require.js"></script>
+
 </body>
 </html>
 

@@ -39,9 +39,9 @@ define([
 
         app_router.on('route:showHome', function(){
            if (Parse.User.current()) {
+               $(".home").hide();
                 window.location.replace('#dashboard');
            } else {
-                console.log("in");
                 $(".home").show();
                 $(".dashboard").hide();
                 var homeView = new HomeView();
