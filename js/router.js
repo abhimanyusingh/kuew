@@ -7,6 +7,7 @@ define([
   'jquery',
   'underscore',
   'parse',
+  'models/User'
   'views/header/HeaderView',
   'views/pageOptions/pageOptionsView',
   'views/aside/AsideView',
