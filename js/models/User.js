@@ -20,6 +20,7 @@ define([
 
       Parse.User.logIn( username, password, {
         success: function(user) {
+          /*
           // get user assets based on his accountID role
           var accountIdName = user.role;
           var queryAccountIdWithAccountIdName = new Parse.Query(accountId);
@@ -36,6 +37,7 @@ define([
               });
             }
           });
+          */
           window.location.replace('#dashboard');
         },
         error: function(user, error) {
