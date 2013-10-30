@@ -71,6 +71,23 @@ define([
 
       $("#SignUpError").attr("disabled", "disabled");
       return false;
-    }
+    };
+    
+    this.resetPassword = function() {
+      var self = this;
+      var verificationEmail = $("#VerificationEmail").val();
+      Parse.User.requestPasswordReset(verificationEmail, {
+        success: function() {
+          self.$("#SuccessMsg").html("Password reset request was sent successfully").show();
+
+        },
+        error: function(error) {
+          self.$("#ErorrMsg").html(error.message).show();
+        }
+      });
+
+      return false;
+
+    };
   }
 });
