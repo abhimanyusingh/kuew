@@ -3,6 +3,7 @@ define([
   'parse'
 ], function($, P) {
   return function() {
+
     this.login = function() {
       var username = $("#username").val();
       var password =  $("#password").val();
@@ -61,6 +62,7 @@ define([
 
       user.signUp(null, {
         success: function(user) {
+          self.createSpecificAccountID(user.get("username") + '_AccoundID')
           window.location.replace('#dashboard');
         },
 
@@ -72,7 +74,55 @@ define([
       $("#SignUpError").attr("disabled", "disabled");
       return false;
     };
-    
+
+    this.createSpecificAccountID= function(role_name) {
+      var self = this;
+      var roleACL = new Parse.ACL();
+      roleACL.setWriteAccess(Parse.User.current(), true);
+      roleACL.setPublicReadAccess(true);
+      var role = new Parse.Role(role_name, roleACL);
+      role.getUsers().add(Parse.User.current());
+
+      role.save(null, {
+        success: function(saveObject) {
+          self.addRoleToKuewAccountID(role)
+          self.createSpecificAminRole(role)
+          self.updateRoleACL(saveObject);
+        },
+        error: function(saveObject, error) {
+          window.alert("Failed creating role with error: " + error.code + ":"+ error.message);
+          console.log(error);
+        }
+      });
+    };
+
+    this.addRoleToKuewAccountID = function(accountID) {
+      var query = new Parse.Query(Parse.Role);
+      query.equalTo("name", "kuewAccountID");
+      query.first({
+        success: function(kuewAccountIDRole) {
+          // console.log(kuewAccountIDRole)
+          kuewAccountIDRole.getRoles().add(accountID);
+          kuewAccountIDRole.save();
+        },
+        error: function(error) {
+          alert("Cant find Trail Role. Error is " + error.code + " " + error.message);
+          console.log(error);
+        }
+      })
+    }
+
+    this.createSpecificAminRole = function(accountID) {
+      var roleACL = new Parse.ACL();
+      roleACL.setWriteAccess(Parse.User.current(), true);
+      roleACL.setPublicReadAccess(true);
+      var adminRole = new Parse.Role(accountID.get("name") + 'Admin', roleACL);
+      adminRole.getUsers().add(Parse.User.current());
+      // TODO: fix it.Here should be the bug
+      accountID.getRoles().add(adminRole);
+      adminRole.save();
+    }
+
     this.resetPassword = function() {
       var self = this;
       var verificationEmail = $("#VerificationEmail").val();
@@ -85,9 +135,7 @@ define([
           self.$("#ErorrMsg").html(error.message).show();
         }
       });
-
       return false;
-
     };
 
     this.forgotPassword = function() {
