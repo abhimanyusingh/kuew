@@ -85,45 +85,8 @@ define([
     },
 
     kuewLogin : function() {
-      var username = $("#username").val();
-      var password =  $("#password").val();
-      var userObj = {'username': username, 'password' : password};
-      /* Parse.Cloud.run('SignIn', userObj, {
-         success: function(user) {
-         console.log(user);
-         Parse.User =  user;
-         window.location.replace('#dashboard');
-         },
-         error: function(user, error) {
-         $("#signInerror").html("Invalid username or password. Please try again.").show();
-         }
-         });*/
-
-      Parse.User.logIn( username, password, {
-        success: function(user) {
-          // get user assets based on his accountID role
-          var accountIdName = user.role;
-          var queryAccountIdWithAccountIdName = new Parse.Query(accountId);
-          queryAccountIdWithAccountIdName.equalTo("name", accountIdName);
-          queryAccountIdWithAccountIdName.find({
-            success: function(accountId) {
-              var queryAssetsWithAccountId = new Parse.query(assets);
-              queryAssetsWithAccountId.equalTo("role", accountID);
-              queryAssetsWithAccountId.find({
-                success: function(assets) {
-                  // show assets on main dashboard page
-
-                }
-              });
-            }
-          });
-          window.location.replace('#dashboard');
-        },
-        error: function(user, error) {
-          $("#ErorrMsg").html("Invalid username or password. Please try again.").show();
-        }
-      });
-
+      user = new KuewUser();
+      user.login()
     }
   });
 
