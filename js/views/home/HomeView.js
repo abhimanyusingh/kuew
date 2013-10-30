@@ -57,12 +57,12 @@ define([
 
 
     kuewForgotPassword : function() {
-      user = new kuewuser();
+      user = new KuewUser();
       user.forgotPassword();
     },
 
     kuewLogin : function() {
-      user = new kuewuser();
+      user = new KuewUser();
       user.login()
     }
   });
