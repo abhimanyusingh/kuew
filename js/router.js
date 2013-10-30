@@ -21,7 +21,7 @@ define([
             'dashboard': 'showDashBoard',
 
             // Default
-            '*actions': 'showDashBoard'
+            '*actions': 'showHome'
         }
     });
 
@@ -30,19 +30,23 @@ define([
 
         var app_router = new AppRouter;
         app_router.on('route:showDashBoard', function(){
-
+            $(".home").hide();
+            $(".dashboard").show();
             var headerView = new HeaderView();
             var headerView = new pageOptionsView();
             var asideView = new AsideView();
-
         });
 
         app_router.on('route:showHome', function(){
-            var homeView = new HomeView();
+           if (Parse.User.current()) {
+               $(".home").hide();
+                window.location.replace('#dashboard');
+           } else {
+                $(".home").show();
+                $(".dashboard").hide();
+                var homeView = new HomeView();
+           }
         });
-
-
-
 
         Parse.history.start();
     };

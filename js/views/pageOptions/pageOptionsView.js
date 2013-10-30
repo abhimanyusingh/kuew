@@ -2,7 +2,7 @@ define([
     'jquery',
     'underscore',
     'parse',
-    'text!templates/dashboard/pageOptions/pageOptionsTemplate.html'
+    'text!templates/pageOptions/pageOptionsTemplate.html'
 ], function($, _, P , pageOptionsTemplate){
 
     var pageOptionsView = Parse.View.extend({
