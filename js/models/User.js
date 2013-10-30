@@ -18,8 +18,6 @@ define([
       user.signUp(null, {
         success: function(user) {
           window.location.replace('#dashboard');
-          // self.undelegateEvents();
-          // delete self;
         },
 
         error: function(user, error) {
