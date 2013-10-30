@@ -57,23 +57,12 @@ define([
 
 
     kuewForgotPassword : function() {
-      var self = this;
-      var verificationEmail = $("#VerificationEmail").val();
-      Parse.User.requestPasswordReset(verificationEmail, {
-        success: function() {
-          alert("Password reset request was sent successfully");
-
-        },
-        error: function(error) {
-          self.$(".signup-form .error").html(error.message).show();
-        }
-      });
-
-      return false;
+      user = new kuewuser();
+      user.forgotPassword();
     },
 
     kuewLogin : function() {
-      user = new KuewUser();
+      user = new kuewuser();
       user.login()
     }
   });
