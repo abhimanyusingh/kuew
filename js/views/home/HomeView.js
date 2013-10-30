@@ -2,7 +2,8 @@ define([
   'jquery',
   'parse',
   'underscore',
-], function($,  P , _ , kuewUser){
+  '../../models/User'
+], function($,  P , _ , KuewUser){
 
   var HomeView = Parse.View.extend({
 
@@ -27,31 +28,8 @@ define([
     },
 
     createKuewUser : function() {
-      var self = this;
-
-      var user = new Parse.User();
-      user.set("firstname", this.$("#FirstName").val());
-      user.set("lastname", this.$("#LastName").val());
-      user.set("email", this.$("#Email").val());
-      user.set("username", this.$("#UserName").val());
-      user.set("phone", this.$("#PhoneNo").val());
-      user.set("password", this.$("#Password").val());
-      user.setACL(new Parse.ACL());
-
-      user.signUp(null, {
-        success: function(user) {
-          window.location.replace('#dashboard');
-          self.undelegateEvents();
-          delete self;
-        },
-
-        error: function(user, error) {
-          self.$("#SignUpErrorr").html(error.message).show();
-        }
-      });
-
-      this.$("#SignUpError").attr("disabled", "disabled");
-      return false;
+      user = new KuewUser();
+      user.create()
     },
 
     resetPassword : function() {
