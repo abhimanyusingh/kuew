@@ -123,6 +123,22 @@ define([
 
             Parse.User.logIn( username, password, {
                 success: function(user) {
+                    // get user assets based on his accountID role
+                    var accountIdName = user.role;
+                    var queryAccountIdWithAccountIdName = new Parse.Query(accountId);
+                    queryAccountIdWithAccountIdName.equalTo("name", accountIdName);
+                    queryAccountIdWithAccountIdName.find({
+                      success: function(accountId) {
+                        var queryAssetsWithAccountId = new Parse.query(assets);
+                        queryAssetsWithAccountId.equalTo("role", accountID);
+                        queryAssetsWithAccountId.find({
+                          success: function(assets) {
+                            // show assets on main dashboard page
+                            
+                          }
+                        });
+                      }
+                    });
                     window.location.replace('#dashboard');
                 },
                 error: function(user, error) {
