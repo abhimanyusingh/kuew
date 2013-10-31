@@ -1,7 +1,8 @@
 define([
   'jquery',
-  'parse'
-], function($, P) {
+  'parse',
+  './kuew-account-id'
+], function($, P, KuewAccountID) {
   return function() {
 
     this.login = function() {
@@ -61,7 +62,7 @@ define([
       user.set("isAccountOwner", true)
       user.signUp(null, {
         success: function(user) {
-          self.createSpecificAccountID(user.get("username") + '_AccountID')
+          self.createSpecificAccountID(user.get("username") + '_AccountID', user)
           window.location.replace('#dashboard');
         },
 
@@ -74,32 +75,28 @@ define([
       return false;
     };
 
-    this.createSpecificAccountID= function(role_name) {
-      var self = this;
-      var roleACL = new Parse.ACL();
-      roleACL.setWriteAccess(Parse.User.current(), true);
-      roleACL.setPublicReadAccess(true);
-      var role = new Parse.Role(role_name, roleACL);
-      role.getUsers().add(Parse.User.current());
-
-      role.save(null, {
-        success: function(saveObject) {
-          self.addRoleToKuewAccountID(saveObject);
-          self.createSpecificAdminRole(saveObject);
+    this.createSpecificAccountID= function(name, user) {
+      var kuewAccountID = new KuewAccountID();
+      kuewAccountID.set("name", name);
+      var userRelation = kuewAccountID.relation("users");
+      userRelation.add(user);
+      kuewAccountID.save(null, {
+        success: function(savedKuewAccountID) {
+          savedKuewAccountID.addTrialRoleAsParent();
         },
-        error: function(saveObject, error) {
-          window.alert("Failed creating role with error: " + error.code + ":"+ error.message);
+        error: function(savedKuewAccountID, error) {
           console.log(error);
         }
-      });
+      })
     };
 
+    // deprecated
     this.addRoleToKuewAccountID = function(accountID) {
       var query = new Parse.Query(Parse.Role);
       query.equalTo("name", "kuewAccountID");
       query.first({
         success: function(kuewAccountIDRole) {
-          console.log(kuewAccountIDRole)
+          console.log(kuewAccountIDRole);
           accountID.set("roleParentID", kuewAccountIDRole.get("roleID"));
           accountID.save();
         },
@@ -110,6 +107,7 @@ define([
       })
     }
 
+    // deprecated
     this.createSpecificAdminRole = function(accountID) {
       var self = this;
       var roleACL = new Parse.ACL();
