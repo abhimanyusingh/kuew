@@ -57,10 +57,11 @@ define([
       user.set("phone", $("#PhoneNo").val());
       user.set("password", $("#Password").val());
       user.setACL(new Parse.ACL());
-
+      // TODO: check if the account exist. currently we hard set isAccountOwner as true
+      user.set("isAccountOwner", true)
       user.signUp(null, {
         success: function(user) {
-          self.createSpecificAccountID(user.get("username") + '_AccoundID')
+          self.createSpecificAccountID(user.get("username") + '_AccountID')
           window.location.replace('#dashboard');
         },
 
@@ -83,9 +84,8 @@ define([
 
       role.save(null, {
         success: function(saveObject) {
-          self.addRoleToKuewAccountID(role)
-          self.createSpecificAminRole(role)
-          self.updateRoleACL(saveObject);
+          self.addRoleToKuewAccountID(saveObject);
+          self.createSpecificAdminRole(saveObject);
         },
         error: function(saveObject, error) {
           window.alert("Failed creating role with error: " + error.code + ":"+ error.message);
@@ -99,9 +99,9 @@ define([
       query.equalTo("name", "kuewAccountID");
       query.first({
         success: function(kuewAccountIDRole) {
-          // console.log(kuewAccountIDRole)
-          kuewAccountIDRole.getRoles().add(accountID);
-          kuewAccountIDRole.save();
+          console.log(kuewAccountIDRole)
+          accountID.set("roleParentID", kuewAccountIDRole.get("roleID"));
+          accountID.save();
         },
         error: function(error) {
           alert("Cant find Trail Role. Error is " + error.code + " " + error.message);
@@ -110,15 +110,25 @@ define([
       })
     }
 
-    this.createSpecificAminRole = function(accountID) {
+    this.createSpecificAdminRole = function(accountID) {
+      var self = this;
       var roleACL = new Parse.ACL();
       roleACL.setWriteAccess(Parse.User.current(), true);
       roleACL.setPublicReadAccess(true);
-      var adminRole = new Parse.Role(accountID.get("name") + 'Admin', roleACL);
+      var adminRole = new Parse.Role(accountID.get("name") + '_Admin', roleACL);
       adminRole.getUsers().add(Parse.User.current());
-      // TODO: fix it.Here should be the bug
-      accountID.getRoles().add(adminRole);
-      adminRole.save();
+      adminRole.set("roleParentID", accountID.get("roleID"));
+      adminRole.save(null, {
+        success: function(saveObject) {
+          accountID.getRoles().add(saveObject);
+          accountID.save();
+        },
+        error: function(saveObject, error) {
+          window.alert("Failed creating role with error: " + error.code + ":"+ error.message);
+          console.log(error);
+        }
+      });
+
     }
 
     this.resetPassword = function() {
@@ -142,7 +152,6 @@ define([
       Parse.User.requestPasswordReset(verificationEmail, {
         success: function() {
           alert("Password reset request was sent successfully");
-
         },
         error: function(error) {
           self.$(".signup-form .error").html(error.message).show();
