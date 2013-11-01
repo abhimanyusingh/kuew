@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>DataSift Query Editor Demo | Themed</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<script type="text/javascript" src="js/vendor/jquery/jquery-min.js"></script>
+    <script type="text/javascript" src="js/vendor/parse/parse.min.js"></script>
+    <script type="text/javascript" src="js/vendor/underscore/underscore-min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="minified/jcsdl.min.css" />
+	<link rel="stylesheet" type="text/css" href="themed/over.css" />
+	<script type="text/javascript" src="minified/jcsdl.definition.js"></script>
+	<script type="text/javascript" src="minified/jcsdl.min.js"></script>
+    <script type="text/javascript" src="js/utlis.js"></script>
+
+    <script type="text/javascript">
+		$(function() {
+            Parse.initialize("zUNltvbSGI2Jh1j8hJwD9acWtdbxAA5XzmmS95w7", "Tp83XbAPCCFHnse06AwJ7hBekJXagRGNYVmuBJPz");
+            //just hack for signIn
+            Parse.User.logIn( 'abhimanyusingh', 'colvin', {
+                success: function(user) {
+                },
+                error: function(user, error) {
+                    $("#ErorrMsg").html("Invalid username or password. Please try again.").show();
+                }
+            });
+
+            //store buzz point into parse for user
+
+
+            var dataSift = {
+
+                runAjax : function(url, method, json) {
+                    return $.ajax({
+                        url: url,
+                        type: method,
+                        contentType: 'application/json',
+                        data: json ? JSON.stringify(json) : ''
+                    });
+                },
+
+                updateUserBuzzPoint : function(bp) {
+                     var BuzzPoint = Parse.Object.extend("BuzzPoint");
+                     var buzzPoint = new BuzzPoint();
+                     buzzPoint.set("buzzPoint", bp);
+                     /*var user = Parse.User.current();
+                     buzzPoint.set('parent', user);*/
+                     buzzPoint.save();
+                },
+
+                getBuzzPointForUser : function(callback) {
+                    var BuzzPoint = Parse.Object.extend("BuzzPoint");
+                    var query = new Parse.Query(BuzzPoint);
+                    var accountId = Parse.User.current().id;
+                    query.find({
+                        success: function(results) {
+                            alert("Successfully retrieved " + results.length + " scores.");
+                            // Do something with the returned Parse.Object values
+                            for (var i = 0; i < results.length; i++) {
+                                var object = results[i];
+                                if(object.get('parent').id ===  accountId) {
+                                    callback(object.get('buzzPoint'));
+                                }
+                            }
+                        },
+                        error: function(error) {
+                            alert("Error: " + error.code + " " + error.message);
+                        }
+                    });
+                },
+
+                //new child
+
+                calculateBuzzPoint : function(stream) {
+                   var self = this;
+                   var dpu =  stream.dpu;
+                    var buzzPoint = 0;
+                    if(dpu <= 1){
+                       var buzzPoint = 1;
+                       var minUserBalance = (buzzPoint * 2)  *24 ; // total cost of consuming that stream
+                       dataSift.getBuzzPointForUser(function(userBalanceBp) {
+                           if(userBalanceBp >= minUserBalance) {
+                                dataSift.updateUserBuzzPoint(userBalanceBp - minUserBalance);
+
+
+                           }
+                       });
+
+                    }
+                    self.runAjax('/stream', 'POST', {data : stream}).done(function(res) {
+                        console.log(res);
+                    });
+                },
+
+                createDataFromElasticSearch :  function(data, callback) {
+                    this.runAjax('/checkEcData', 'POST', {data : data}).done(function(res) {
+                        callback(res ? res.hits.total : 0);
+                    });
+                },
+
+                createHash :  function(data) {
+                    this.runAjax('/hash-create', 'POST', {data : data}).done(function(res) {
+                        dataSift.calculateBuzzPoint(res);
+                    });
+                },
+
+                getDpuUsage : function() {
+                    this.runAjax('/dpu-usage', 'GET').done(function(res) {
+                        alert(res);
+                    });
+                }
+            }
+
+			$('#jcsdl-edit').jcsdlGui({
+				save : function(code) {
+					// display the output
+                    var finalCode = removeComments(code);
+                    finalCode = finalCode.replace(/(\r\n|\n|\r)/gm,"");
+                    var totalHits = dataSift.createDataFromElasticSearch(finalCode , function(totalHits) {
+                        console.log("totalHits--->"+totalHits);
+                        if(totalHits == 0) {
+                            dataSift.createHash(finalCode);
+                        }
+                        console.log(totalHits);
+
+                    });
+
+              	}
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="jcsdl-edit"></div>
+
+	<h3>JCSDL Output:</h3>
+	<textarea id="jcsdl-edit-output" disabled="true" style="width: 90%; margin: 20px auto; display: block; height: 200px;"></textarea>
+</body>
+</html>
