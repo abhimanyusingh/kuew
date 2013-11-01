@@ -90,44 +90,6 @@ define([
       })
     };
 
-    // deprecated
-    this.addRoleToKuewAccountID = function(accountID) {
-      var query = new Parse.Query(Parse.Role);
-      query.equalTo("name", "kuewAccountID");
-      query.first({
-        success: function(kuewAccountIDRole) {
-          console.log(kuewAccountIDRole);
-          accountID.set("roleParentID", kuewAccountIDRole.get("roleID"));
-          accountID.save();
-        },
-        error: function(error) {
-          alert("Cant find Trail Role. Error is " + error.code + " " + error.message);
-          console.log(error);
-        }
-      })
-    }
-
-    // deprecated
-    this.createSpecificAdminRole = function(accountID) {
-      var self = this;
-      var roleACL = new Parse.ACL();
-      roleACL.setWriteAccess(Parse.User.current(), true);
-      roleACL.setPublicReadAccess(true);
-      var adminRole = new Parse.Role(accountID.get("name") + '_Admin', roleACL);
-      adminRole.getUsers().add(Parse.User.current());
-      adminRole.set("roleParentID", accountID.get("roleID"));
-      adminRole.save(null, {
-        success: function(saveObject) {
-          accountID.getRoles().add(saveObject);
-          accountID.save();
-        },
-        error: function(saveObject, error) {
-          window.alert("Failed creating role with error: " + error.code + ":"+ error.message);
-          console.log(error);
-        }
-      });
-
-    }
 
     this.resetPassword = function() {
       var self = this;
