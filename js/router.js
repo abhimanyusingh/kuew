@@ -11,8 +11,8 @@ define([
   'views/pageOptions/pageOptionsView',
   'views/aside/AsideView',
   'views/home/HomeView',
-
-], function($, _ , P,  HeaderView, pageOptionsView, AsideView, HomeView) {
+  'views/dashboard/DashboardView'
+], function($, _ , P,  HeaderView, PageOptionsView, AsideView, HomeView, DashboardView) {
 
   var AppRouter = Parse.Router.extend({
     routes: {
@@ -33,8 +33,9 @@ define([
       $(".home").hide();
       $(".dashboard").show();
       var headerView = new HeaderView();
-      var headerView = new pageOptionsView();
+      var pageOptionsView = new PageOptionsView();
       var asideView = new AsideView();
+      var dashboardView = new DashboardView();
     });
 
     app_router.on('route:showHome', function(){
