@@ -82,7 +82,8 @@ define([
       userRelation.add(user);
       kuewAccountID.save(null, {
         success: function(savedKuewAccountID) {
-          savedKuewAccountID.addTrialRoleAsParent();
+          // savedKuewAccountID.addTrialRoleAsParent();
+          savedKuewAccountID.addTrialRoleToRoles();
         },
         error: function(savedKuewAccountID, error) {
           console.log(error);
