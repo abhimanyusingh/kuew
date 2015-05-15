@@ -30,7 +30,7 @@ define([
         },
 
         render: function(){
-             var data = {'username' : Parse.User.current().get('username')};
+            var data = {'username': Parse.User.current().get('username')};
             var compiledTemplate = _.template( headerTemplate, data );
             this.$el.html(compiledTemplate);
         }
